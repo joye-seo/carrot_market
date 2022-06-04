@@ -1,4 +1,4 @@
-package com.example.week3_carrot_market
+package com.example.week3_carrot_market.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

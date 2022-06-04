@@ -1,21 +1,18 @@
-package com.example.week3_carrot_market
+package com.example.week3_carrot_market.adapter
 
-import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.RoundedCorner
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.annotation.RequiresFeature
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.example.week3_carrot_market.DetailHomeActivity
+import com.example.week3_carrot_market.MainActivity
 import com.example.week3_carrot_market.data.Sale
 import com.example.week3_carrot_market.databinding.ItemHomeSaleListBinding
-import com.example.week_1.Fragment.HomeFragment
 
 class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
@@ -58,14 +55,13 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
             binding.tvMoney.text = sale.getFormattedMoney()
             binding.tvPullUp.text = sale.getFormattedPullUp()
 
-//            itemView.setOnClickListener {
-//
-//                Toast.makeText(mainActivity, "${itemView}i", Toast.LENGTH_SHORT).show()
-//
-//                val myIntent = Intent(mainActivity, DetailHomeActivity::class.java)
-////                myIntent.putExtra("Data", sale)
-//                mainActivity.startActivity(myIntent)
-//            }
+            itemView.setOnClickListener {
+
+
+                val myIntent = Intent(itemView.context, DetailHomeActivity::class.java)
+                myIntent.putExtra("Data", sale)
+                itemView.context.startActivity(myIntent)
+            }
 
 
         }

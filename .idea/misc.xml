@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.176" />
         <entry key="app/src/main/res/drawable/rec_img_r10.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/rec_search.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/selector_around.xml" value="0.1025" />
         <entry key="app/src/main/res/drawable/selector_chatting.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/selector_home.xml" value="0.1795" />
         <entry key="app/src/main/res/drawable/selector_hut.xml" value="0.1" />
@@ -23,6 +24,7 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2515625" />
         <entry key="app/src/main/res/layout/fragment_town.xml" value="0.2515625" />
+        <entry key="app/src/main/res/layout/item_around_list.xml" value="0.2056434373663959" />
         <entry key="app/src/main/res/layout/item_chat_list.xml" value="0.20649850363403163" />
         <entry key="app/src/main/res/layout/item_home_sale_list.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.2515625" />

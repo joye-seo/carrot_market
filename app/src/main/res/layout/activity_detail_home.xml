@@ -6,17 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".DetailHomeActivity">
 
-    <FrameLayout
+    <TextView
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="400dp">
+        android:layout_height="wrap_content"
+        android:text="디테일 액티비티 부분 입니다"
+        android:textSize="20sp" />
 
-
-
-
-
-
-
-    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.week3_carrot_market.HomeAdapter
+import com.example.week3_carrot_market.adapter.HomeAdapter
 import com.example.week3_carrot_market.R
 import com.example.week3_carrot_market.data.Sale
 import com.example.week3_carrot_market.databinding.FragmentHomeBinding
