@@ -16,6 +16,8 @@ import com.example.week3_carrot_market.databinding.ItemHomeSaleListBinding
 
 class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
+
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         Log.d("adapter", "onCreateViewHolder")
        val  binding = ItemHomeSaleListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -69,6 +71,7 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
                 myIntent.putExtra("Data", sale)
                 itemView.context.startActivity(myIntent)
             }
+
 
         }
     }

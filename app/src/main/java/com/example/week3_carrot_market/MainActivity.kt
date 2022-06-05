@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.week3_carrot_market.adapter.HomeAdapter
+import com.example.week3_carrot_market.data.Sale
+import com.example.week3_carrot_market.data.saleDB
 import com.example.week3_carrot_market.databinding.ActivityMainBinding
 import com.example.week_1.Fragment.*
 
@@ -30,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        homeAdapter = HomeAdapter(saleDB.saleList)
 
         initNavigationBar()
         bottomNavOption()
@@ -77,7 +81,14 @@ class MainActivity : AppCompatActivity() {
         binding.fabWrite.setOnClickListener {
             val intent = Intent(this,WriteActivity::class.java)
             startActivity(intent)
+//            val item = Sale(R.drawable.item_1, "루피인형", "신내 1동 ", 30, 30000, false)
+//            saleDB.saleList.add(item)
+//            homeAdapter.notifyDataSetChanged()
+
         }
+
+
+
     }
 
     private fun changeFragment(fragment: Fragment) {
