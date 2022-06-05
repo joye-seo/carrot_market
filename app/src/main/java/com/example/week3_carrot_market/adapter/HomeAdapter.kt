@@ -1,7 +1,9 @@
 package com.example.week3_carrot_market.adapter
 
 import android.content.Intent
+import android.icu.text.Transliterator
 import android.util.Log
+import android.util.SparseBooleanArray
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -16,13 +18,21 @@ import com.example.week3_carrot_market.databinding.ItemHomeSaleListBinding
 
 class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
-    private lateinit var mainActivity: MainActivity
+    private val checkboxStatus = SparseBooleanArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         Log.d("adapter", "onCreateViewHolder")
-        return HomeViewHolder(ItemHomeSaleListBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+       val  binding = ItemHomeSaleListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return HomeViewHolder(binding).also {
+            binding.btnSwitch.setOnCheckedChangeListener { compoundButton, b ->
+                sale[it.adapterPosition].button = b
+             }
+        }
+        // 체크 안풀리게 처리해주는 코드!
 
         //attachToParent :  parent에 연결 시킬 때 직접 생성할때 하는게 아닌 리사이클러뷰가 알아서 해줘야 함! 그러므로 false 사용
+
     }
     // 호출되는 횟수가 정해져 있음
     // 뷰홀더를 만든다는건 이름 그대로 뷰를 만든다는 의미와 같음
@@ -54,9 +64,9 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
             binding.tvItemName.text = sale.itemName
             binding.tvMoney.text = sale.getFormattedMoney()
             binding.tvPullUp.text = sale.getFormattedPullUp()
+            binding.btnSwitch.isChecked = sale.button
 
             itemView.setOnClickListener {
-
 
                 val myIntent = Intent(itemView.context, DetailHomeActivity::class.java)
                 myIntent.putExtra("Data", sale)

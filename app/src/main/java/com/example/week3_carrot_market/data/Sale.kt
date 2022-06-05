@@ -8,7 +8,8 @@ data class Sale(
     val itemName: String,
     val address: String,
     val pullUp: Int,
-    val money: Int
+    val money: Int,
+    var button : Boolean
 ): Serializable {
     fun getFormattedMoney(): String {
         val formatter = DecimalFormat("#,###")

@@ -1,6 +1,6 @@
 package com.example.week3_carrot_market.data
 
-class Chat(
+data class Chat(
     val profileImg : Int,
     val id : String,
     val address : String,
