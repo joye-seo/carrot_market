@@ -15,10 +15,10 @@ import com.example.week3_carrot_market.DetailHomeActivity
 import com.example.week3_carrot_market.MainActivity
 import com.example.week3_carrot_market.data.Sale
 import com.example.week3_carrot_market.databinding.ItemHomeSaleListBinding
+import kotlinx.coroutines.delay
+import java.util.logging.Handler
 
 class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
-
-    private val checkboxStatus = SparseBooleanArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         Log.d("adapter", "onCreateViewHolder")
@@ -66,12 +66,15 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
             binding.tvPullUp.text = sale.getFormattedPullUp()
             binding.btnSwitch.isChecked = sale.button
 
+
             itemView.setOnClickListener {
 
                 val myIntent = Intent(itemView.context, DetailHomeActivity::class.java)
                 myIntent.putExtra("Data", sale)
                 itemView.context.startActivity(myIntent)
             }
+
+
 
 
         }

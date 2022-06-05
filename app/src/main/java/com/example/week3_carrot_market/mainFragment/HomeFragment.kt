@@ -17,7 +17,7 @@ class HomeFragment : Fragment() {
 
     private val binding get() = _binding!!
 
-    private val sales = listOf(
+    private var sales = listOf(
         Sale(R.drawable.item_1, "루피인형", "신내 1동 ", 30, 30000,false),
         Sale(R.drawable.item_2, " 안경 ", "묵동 ", 600, 20000,false),
         Sale(R.drawable.item_3, "안경팝니다!!", "상봉동 ", 800, 20000,false),

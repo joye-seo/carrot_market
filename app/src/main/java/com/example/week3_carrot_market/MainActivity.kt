@@ -1,5 +1,6 @@
 package com.example.week3_carrot_market
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         initNavigationBar()
         bottomNavOption()
+        clickEvent()
 
     }
 
@@ -66,6 +68,13 @@ class MainActivity : AppCompatActivity() {
             selectedItemId = R.id.bottom_home
         }
 
+    }
+
+    private fun clickEvent(){
+        binding.fabWrite.setOnClickListener {
+            val intent = Intent(this,WriteActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun changeFragment(fragment: Fragment) {

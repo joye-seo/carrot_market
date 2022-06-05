@@ -20,4 +20,12 @@
         <item name="android:textColor">@color/mainTextColor</item>
 
     </style>
+
+    <style name="noStatusBar" parent="Theme.Week3_carrot_market">
+        <item name="android:windowTranslucentStatus">true
+        </item>
+
+    </style>
+
+
 </resources>

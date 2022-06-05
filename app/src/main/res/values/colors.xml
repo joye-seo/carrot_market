@@ -23,6 +23,7 @@
     <color name="subTextColor">#878B84</color>
     <color name="statusBar_icon">#4C4C4C</color>
     <color name="bottom_color">#1D1D1F</color>
+    <color name="mani_color">#FFee8548</color>
 
 
 </resources>
