@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.week3_carrot_market.adapter.HomeAdapter
 import com.example.week3_carrot_market.databinding.ActivityMainBinding
 import com.example.week_1.Fragment.*
 
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var profileFragment: ProfileFragment
 
     private lateinit var townFragment: TownFragment
+
+    private lateinit var homeAdapter: HomeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

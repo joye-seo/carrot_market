@@ -1,8 +1,8 @@
 package com.example.week3_carrot_market
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.week3_carrot_market.data.Sale
 import com.example.week3_carrot_market.databinding.ActivityModifyBinding
@@ -22,16 +22,21 @@ class ModifyActivity : AppCompatActivity() {
         setEvents()
 
         sale = intent.getSerializableExtra("Data") as Sale
+
         clickData()
+
 
     }
 
     private fun setEvents(){
         binding.btnFinish.setOnClickListener {
-            val intent = Intent(this,DetailHomeActivity::class.java)
-            intent.putExtra("Data",sale)
-            setResult(RESULT_OK,intent)
-            finish()
+//            val intent = Intent(this,DetailHomeActivity::class.java)
+//            intent.putExtra("ModifyTitle", binding.tvTitle.toString()).putExtra("ModifyMoney",binding.tvMoney.toString())
+//            setResult(RESULT_OK,intent)
+//            finish()
+
+            val title = binding.tvTitle.text.toString()
+            val money = binding.tvMoney.text.toString()
         }
 
         binding.btnBack.setOnClickListener {

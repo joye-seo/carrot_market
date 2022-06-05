@@ -1,9 +1,11 @@
 package com.example.week3_carrot_market
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.bundleOf
 import com.example.week3_carrot_market.databinding.ActivityWriteBinding
+import com.example.week_1.Fragment.HomeFragment
 
 class WriteActivity : AppCompatActivity() {
 
@@ -15,14 +17,24 @@ class WriteActivity : AppCompatActivity() {
         binding = ActivityWriteBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
-        setEvents()
+        initView()
     }
 
-    private fun setEvents(){
+    private fun initView(){
         binding.btnFinish.setOnClickListener {
-            val intent = Intent(this,MainActivity::class.java)
-            intent.putExtra("Write",binding.tvTitle.toString())
-        }
+
+            val title = binding.tvTitle.text.toString()
+            val money = binding.tvMoney.text.toString()
+
+            var homeFragment = HomeFragment()
+
+            val bundle = bundleOf("title" to title, "money" to money)
+                homeFragment.arguments = bundle
+
+            this?.supportFragmentManager!!.beginTransaction()
+                .replace(R.id.rv_home_sale_list, homeFragment)
+                .commit()
+       }
 
         binding.btnBack.setOnClickListener {
             onBackPressed()

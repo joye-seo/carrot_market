@@ -1,10 +1,9 @@
 package com.example.week3_carrot_market.adapter
 
 import android.content.Intent
-import android.icu.text.Transliterator
 import android.util.Log
-import android.util.SparseBooleanArray
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -12,11 +11,8 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.week3_carrot_market.DetailHomeActivity
-import com.example.week3_carrot_market.MainActivity
 import com.example.week3_carrot_market.data.Sale
 import com.example.week3_carrot_market.databinding.ItemHomeSaleListBinding
-import kotlinx.coroutines.delay
-import java.util.logging.Handler
 
 class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
@@ -41,6 +37,7 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
         Log.d("adapter", "onBindViewHolder")
         holder.bind(sale[position])
 
+
     }
     // 스크롤 하면 할수록 계속 호출 됨
 
@@ -49,7 +46,6 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
 
     override fun getItemCount(): Int = sale.size
     //총 몇개 그려야 하니? -> 서버에서 받아서 로딩 할때 등등
-
 
     inner class HomeViewHolder(private val binding: ItemHomeSaleListBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -73,9 +69,6 @@ class HomeAdapter(private val sale: List<Sale>) : RecyclerView.Adapter<HomeAdapt
                 myIntent.putExtra("Data", sale)
                 itemView.context.startActivity(myIntent)
             }
-
-
-
 
         }
     }

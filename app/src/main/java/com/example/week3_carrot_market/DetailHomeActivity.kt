@@ -1,10 +1,9 @@
 package com.example.week3_carrot_market
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.PopupMenu
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.week3_carrot_market.adapter.HomeAdapter
 import com.example.week3_carrot_market.data.Sale
@@ -49,13 +48,7 @@ class DetailHomeActivity : AppCompatActivity() {
                        startActivity(intent)
                        true
                    }
-                   R.id.btn_delete ->{
-
-//                       intent = Intent(this@DetailHomeActivity, ModifyActivity::class.java)
-//                       intent.putExtra("Data", sale)
-//                       startActivity(intent)
-//                       finish()
-//                       true
+                   R.id.btn_delete -> {
 
                    }
 
@@ -68,6 +61,7 @@ class DetailHomeActivity : AppCompatActivity() {
 
     }
 
+
     private fun clickData() = with(binding) {
 
         Glide.with(this@DetailHomeActivity).load(sale.image).into(ivSale)
@@ -77,5 +71,10 @@ class DetailHomeActivity : AppCompatActivity() {
         tvMoney.text = sale.getFormattedMoney()
         tvAddress.text = sale.address
 
+    }
+
+    private fun getData() {
+        binding.tvSaleName.text = intent.getStringExtra("ModifyTitle")
+        binding.tvMoney.text = intent.getStringExtra("ModifyMoney")
     }
 }

@@ -6,14 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.week3_carrot_market.R
 import com.example.week3_carrot_market.adapter.AroundAdapter
-import com.example.week3_carrot_market.adapter.HomeAdapter
 import com.example.week3_carrot_market.data.Around
-import com.example.week3_carrot_market.data.Chat
 import com.example.week3_carrot_market.databinding.FragmentAroundBinding
-import com.example.week3_carrot_market.databinding.FragmentChatBinding
 
 class AroundFragment : Fragment() {
 
