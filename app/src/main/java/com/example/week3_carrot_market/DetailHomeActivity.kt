@@ -1,7 +1,9 @@
 package com.example.week3_carrot_market
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.PopupMenu
 import com.bumptech.glide.Glide
 import com.example.week3_carrot_market.adapter.HomeAdapter
@@ -35,12 +37,33 @@ class DetailHomeActivity : AppCompatActivity() {
             onBackPressed()
         }
        btnMore.setOnClickListener {
-           val popupMenu = PopupMenu(applicationContext,btnMore)
-           menuInflater.inflate(R.menu.detail_menu,popupMenu.menu)
+           val popupMenu = PopupMenu(applicationContext, btnMore)
+           menuInflater.inflate(R.menu.detail_menu, popupMenu.menu)
 
-//           popupMenu.setOnMenuItemClickListener {
-//
-//           }
+           popupMenu.setOnMenuItemClickListener { MenuItem ->
+
+               when (MenuItem.itemId) {
+                   R.id.btn_modify -> {
+                       intent = Intent(this@DetailHomeActivity, ModifyActivity::class.java)
+                       intent.putExtra("Data", sale)
+                       startActivity(intent)
+                       true
+                   }
+                   R.id.btn_delete ->{
+
+//                       intent = Intent(this@DetailHomeActivity, ModifyActivity::class.java)
+//                       intent.putExtra("Data", sale)
+//                       startActivity(intent)
+//                       finish()
+//                       true
+
+                   }
+
+               }
+               false
+
+           }
+           popupMenu.show()
        }
 
     }
@@ -50,8 +73,8 @@ class DetailHomeActivity : AppCompatActivity() {
         Glide.with(this@DetailHomeActivity).load(sale.image).into(ivSale)
         tvAddress.text = sale.address
         tvSaleName.text = sale.itemName
-        tvTime.text = sale.getFormattedMoney()
-        tvContent.text = sale.getFormattedPullUp()
+        tvTime.text = sale.getFormattedPullUp()
+        tvMoney.text = sale.getFormattedMoney()
         tvAddress.text = sale.address
 
     }

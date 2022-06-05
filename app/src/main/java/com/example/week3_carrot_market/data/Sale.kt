@@ -5,10 +5,10 @@ import java.text.DecimalFormat
 
 data class Sale(
     val image: Int,
-    val itemName: String,
+    var itemName: String,
     val address: String,
     val pullUp: Int,
-    val money: Int,
+    var money: Int,
     var button : Boolean
 ): Serializable {
     fun getFormattedMoney(): String {

@@ -18,6 +18,7 @@
         <entry key="app/src/main/res/font/font_yungothic_330.xml" value="0.20052083333333334" />
         <entry key="app/src/main/res/layout/activity_detail_home.xml" value="0.1936725096194955" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21052631578947367" />
+        <entry key="app/src/main/res/layout/activity_modify.xml" value="0.1483539974348012" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1936725096194955" />
         <entry key="app/src/main/res/layout/activity_write.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_around.xml" value="0.2515625" />
